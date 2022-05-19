@@ -1,6 +1,7 @@
 import dao.Sql2ofullstackCollaboratorsDao;
 import dao.Sql2ofullstackDao;
 import model.Fullstack;
+import model.fullstack;
 import model.fullstackCollaborators;
 import org.sql2o.Sql2o;
 import spark.ModelAndView;
@@ -15,24 +16,12 @@ import static spark.Spark.*;
 
 
 public class App {
-    static int getHerokuAssignedPort() {
-        ProcessBuilder processBuilder = new ProcessBuilder();
-        if (processBuilder.environment().get("PORT") != null) {
-            return Integer.parseInt(processBuilder.environment().get("PORT"));
-        }
-        return 4567;
-    }
-    public static void main(String[] args) {
-        port(getHerokuAssignedPort());
-        staticFileLocation("/public");
-
-
-        // String connection = "jdbc:postgresql://ec2-54-172-175-251.compute-1.amazonaws.com:5432/d19tsrp5ts9arv";
+    // String connection = "jdbc:postgresql://ec2-54-172-175-251.compute-1.amazonaws.com:5432/d19tsrp5ts9arv";
 //        Sql2o sql2o = new Sql2o(connection,"acutsmyrvfxroj","f6f2568b1bedb19e5723424cd139ea089f13b9effb3756dcc39ca0ba0196a631");
 
 
-        String connect =  "jdbc:postgresql://localhost/geek_collaborators";
-        Sql2o sql2o = new Sql2o(connect,"postgres","kamotho");
+//        String connect =  "jdbc:postgresql://localhost/geek_collaborators";
+//        Sql2o sql2o = new Sql2o(connect,"postgres","kamotho");
 
 //        String connect =  "jdbc:postgresql://localhost/geek_collaborators";
 //        Sql2o sql2o = new Sql2o(connect,"postgres","kamotho");
