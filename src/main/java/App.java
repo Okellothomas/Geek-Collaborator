@@ -1,3 +1,12 @@
+
+
+import model.jobs;
+import org.sql2o.Sql2o;
+
+
+import spark.ModelAndView;
+import spark.template.handlebars.HandlebarsTemplateEngine;
+import DAO.*;
 import dao.Sql2ofullstackCollaboratorsDao;
 import model.*;
 import dao.*;
@@ -5,6 +14,7 @@ import org.sql2o.Sql2o;
 import dao.Sql2ofullstackDao;
 import model.Fullstack;
 import model.fullstack;
+import dao.fullstackDao;
 
 import dao.Sql2oCollaborationDao;
 import dao.Sql2oDevelopersDao;
@@ -18,7 +28,16 @@ import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import java.util.*;
 
+
 import model.Contacts;
+
+
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+//import static spark.SparkBase.staticFileLocation;
+
 
 import java.util.HashMap;
 import java.util.List;
@@ -27,14 +46,19 @@ import java.util.Map;
 import static spark.Spark.*;
 
 
-public class App {
+
 
     // String connection = "jdbc:postgresql://ec2-54-172-175-251.compute-1.amazonaws.com:5432/d19tsrp5ts9arv";
 //        Sql2o sql2o = new Sql2o(connection,"acutsmyrvfxroj","f6f2568b1bedb19e5723424cd139ea089f13b9effb3756dcc39ca0ba0196a631");
 
 
+
 //        String connect =  "jdbc:postgresql://localhost/geek_collaborators";
 //        Sql2o sql2o = new Sql2o(connect,"postgres","kamotho");
+
+
+public class App {
+
 
     static int getHerokuAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();
@@ -58,9 +82,22 @@ public class App {
         Sql2ofullstackDao fullstackDao = new Sql2ofullstackDao(sql2o);
 
 
+
 //
 //    public static void main(String[] args) {
 //        String connect =  "jdbc:postgresql://localhost/geek_collaborators";
+
+//        Sql2o sql2o = new Sql2o(connect,"chechesylvia","0718500898");
+
+        Sql2oJobsDao JobsDao = new Sql2oJobsDao(sql2o);
+
+
+//        get("/jobs", (request, response) -> {
+//            Map<String, Object> model = new HashMap<>();
+//            return new ModelAndView(model, "jobs.hbs");
+//        }, new HandlebarsTemplateEngine());
+
+
 //        Sql2o sql2o = new Sql2o(connect,"postgres","okello");
         Sql2oStudentsDao sql2oStudentsDao ;
         Sql2oDevelopersDao sql2oDevelopersDao;
@@ -72,6 +109,11 @@ public class App {
 
 
         Sql2oContact contactDao = new Sql2oContact(sql2o);
+
+        get("/",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model,"index.hbs");
+        },new HandlebarsTemplateEngine());
 
 
             /*----------------------------Consume API--------------------------------*/
@@ -148,11 +190,6 @@ public class App {
 
 
 
-        get("/",(request, response) -> {
-            Map<String, Object> model = new HashMap<>();
-            return new ModelAndView(model,"index.hbs");
-        },new HandlebarsTemplateEngine());
-
         //display form receive clients data
         get("/Fullstack/new",(request,response)->{
             Map<String, Object>model = new HashMap<>();
@@ -176,12 +213,35 @@ public class App {
 // display all contacts
         get("/Fullstack",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            List<Fullstack> allContacts = fullstackDao.getAllfullstack();
-            model.put("Fullstack",allContacts);
-            return new ModelAndView(model,"projects.hbs");
+
+            List<jobs> allJobs = JobsDao.getAll();
+            model.put("jobs",allJobs);
+            return new ModelAndView(model,"job-form.hbs");
         },new HandlebarsTemplateEngine());
 
+//clear all jobs
+        get("/jobs/delete",(request, response)-> {
+                    Map<String, Object> model = new HashMap<>();
+                    JobsDao.deleteAll();
+                    return null;
+        },new HandlebarsTemplateEngine());
 
+//            List<Fullstack> allContacts = fullstackDao.getAllfullstack();
+//            model.put("Fullstack",allContacts);
+//            return new ModelAndView(model,"projects.hbs");
+//
+//        },new HandlebarsTemplateEngine());
+
+
+
+
+//delete job by Id
+        get("/jobs/:id/delete",(request, response)->{
+            Map<String, Object>model = new HashMap<>();
+            int idOfJobToDelete = Integer.parseInt(request.params("id"));
+            JobsDao.deleteById(idOfJobToDelete);
+            return null;
+        }, new HandlebarsTemplateEngine());
 
 //delete contact by Id
         get("/Fullstack/:id/delete",(request, response)-> {
@@ -234,4 +294,6 @@ public class App {
                 return new ModelAndView(model, "projects.hbs");
             }, new HandlebarsTemplateEngine());
 
-}}
+
+    }
+}

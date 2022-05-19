@@ -1,0 +1,2 @@
+DROP DATABASE geek_collaborators_test;
+DROP DATABASE geek_collaborators;

@@ -76,3 +76,4 @@ public class fullstackCollaborators {
         return Objects.hash(name, language, contact, role, id);
     }
 }
+
