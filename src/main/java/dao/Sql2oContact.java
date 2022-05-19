@@ -85,3 +85,9 @@ public class Sql2oContact implements contactDao{
     }
 
 }
+
+
+
+
+
+

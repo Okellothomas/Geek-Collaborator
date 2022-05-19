@@ -1,0 +1,159 @@
+*{
+box-sizing: border-box;
+margin:o;
+padding:0;
+}
+body{
+overflow-y:auto;
+  background-attachment: fixed;
+ background-image: linear-gradient(to right top, #da4c9d, #cc5eb5, #b96fc9, #a47ed8, #8d8be1, #7497ea, #58a2ee, #3bacee, #00b8ec, #00c3e5, #00ccd9, #39d4ca);
+ background-repeat: no-repeat;
+ color: white;
+}
+.navbar{
+color: white;
+}
+.navbar-nav {
+            margin-left: auto;
+ }
+ #description{
+ margin-top: 150px;
+ }
+ .navbar-nav a{
+ color: black;
+
+ }
+ .projects{
+ margin-top: 50px;
+ border: 2px solid black;
+ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+ transition: all 1s ease-in-out;
+ }
+ .projects:hover {
+   transform: translateX(0px) translateY(10px);
+ }
+ .student{
+ height:100vh;
+ background: linear-gradient(to right top, #da4c9d, #cc5eb5, #b96fc9, #a47ed8, #8d8be1, #7497ea, #58a2ee, #3bacee, #00b8ec, #00c3e5, #00ccd9, #39d4ca);
+  background-repeat: no-repeat;
+
+
+ }
+.stud{
+height:100vh;
+ background-image:url("/images/and4.jpeg");
+ background-repeat: no-repeat;
+ background-size:cover;
+ background-position:center;
+display:grid;
+place-items:center;
+color: white;
+font-size:25px;
+opacity:0.3;
+}
+.logstud{
+display:grid;
+place-items:center;
+}
+.dev{
+height:100vh;
+ background-image:url("/images/and5.jpeg");
+ background-repeat: no-repeat;
+ background-size:cover;
+ background-position:center;
+color: white;
+font-size:25px;
+opacity:0.2;
+}
+#myForm {
+color: white;
+}
+#myForm input{
+padding: 5px;
+width: 400px;
+border-radius: 5px;
+border:none;
+}
+#myForm1 input{
+padding: 5px;
+width: 300px;
+border-radius: 5px;
+border:none;
+}
+html {
+  scroll-behavior: smooth;
+}
+.java{
+color: black;
+background-color: transparent;
+padding-top:200px;
+ scroll-behavior: smooth;
+
+}
+.java1{
+color: black;
+background-color: transparent;
+padding-top:240px;
+ scroll-behavior: smooth
+}
+.spark{
+ scroll-behavior: smooth
+}
+.theprojects{
+display: flex;
+flex-direction:row;
+}
+.quote{
+height: 270px;
+margin-top:260px;
+position: fixed;
+right: 0;
+
+}
+.card{
+transition: all 1s ease-in-out;
+}
+.card:hover {
+   transform: translateX(5px) translateY(5px);
+ }
+ .head2{
+ background-color:rgba(0,0,0,0.5);
+ }
+
+.proj input::placeholder,.proj input{
+color: white;
+outline:none;
+}
+.boun{
+@keyframes bounce { 0% { transform: translateY(0); } 100% { transform: translateY(-50px); } }
+#demo { animation: bounce 0.8s infinite alternate; }
+}
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-40px);
+  }
+  60% {
+    transform: translateY(-20px);
+  }
+}
+.viewcol{
+   display: flex;
+   flex-direction:row;
+   flex-wrap: wrap;
+   padding: 5px;
+
+}
+
+
+
+
+
+
+

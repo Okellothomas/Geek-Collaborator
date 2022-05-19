@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+<div class="container-fluid fixed-top head2">
+    <h3 class="text-center pt-3"><a style="color:black;" href="/android">Back</a></h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="pt-2 pb-2">Please fill this form for easy tracking of your collaboration</h4>
+                <form action="/projects/developers/new" method="post" id="myForm1" class="proj">
+                    <label for="username"><b>Github Username: </b></label>&nbsp;<input style="background-color:transparent; border:1px solid white;" type="text" placeholder="Your github username..." name="username"  id="name" required>&nbsp;&nbsp;
+                    <label for="resume"><b>Resume: </b></label>&nbsp;&nbsp;&nbsp;<input style="background-color:transparent; border:1px solid white;" type="file" placeholder="Upload you resume" name="resume" required><br><br>
+                    <label for="project_code"><b>Project Code: </b></label><input style="background-color:transparent; border:1px solid white;" type="text" placeholder="Project Code eg. JS01" name="project_code" required>&nbsp;&nbsp;
+                    <label for="date"><b>Start date: </b></label> <input style="background-color:transparent; border:1px solid white;" type="date" placeholder="Date you will start collaborating" name="date" required>
+                    <button type="submit" class="btn btn-success" onclick="fg()">Submit</button><br>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="theprojects mx-5">
+    <div class="java1 col-md-5 ">
+        <h4 class="text-center head pb-3" style="text-decoration:underline;">Java/Spark</h4>
+        <div class="card my-3" style="width:27rem;">
+            <div class="card-header">Project Code: JS01 <span class="text-warning" style="float:right">Deadline: 2022-07-25</span> </div>
+            <div class="card-body">
+                <h5 class="card-title">Online Voting System</h5>
+                <p class="card-text">Online Election Voting System developed in Advance Java.</p>
+                <div id="more" style="display: none;">
+                    <p>To Do</p>
+                    <p>1. Clone this repo link: <a href="https://github.com/mukulchhipa/Online-Voting">online voting system</a> </p>
+                    <p>2. Create a branch called ft-mailer</p>
+                    <p>3. Create a new Class Called Mailer.java, and work on database methods.</p>
+                    <p>4. Keep pushing your work to your branch</p>
+
+                </div>
+                <a href="#" class="btn btn-primary" onclick="more()" id="mbtn">more</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="card my-3" style="width:27rem;">
+            <div class="card-header">Project Code: JS02 <span class="text-warning" style="float:right">Deadline: 2022-07-25</span></div>
+            <div class="card-body">
+                <h5 class="card-title">Vehicle Management System</h5>
+                <p class="card-text">An Web App to buy or sell vehicles. Developed using Java Servlets, JSP templates, JDBC driver and mySQL database.</p>
+                <div id="more1" style="display:none;">
+                    <p>To Do</p>
+                    <p>1. Clone this repo link: <a href="https://github.com/Ganesh-Sindagi/Vehicle-Management-System-Java-Servlet">vehicle booking</a> </p>
+                    <p>2. Create a branch called ft-dashboard</p>
+                    <p>3. Create a new Class Called Dashboard.java, and work the layout.</p>
+                    <p>4. Keep pushing your work to your branch</p>
+                    <p></p>
+                </div>
+                <a href="#" class="btn btn-primary" onclick="more1()" id="mbtn">more</a>
+                <!--                <p class="pt-2"><div class="card-header bg-warning mt-2">deadline: <span id="demo"></span></div>-->
+                <!--                </p>-->
+            </div>
+        </div>
+
+        <div class="card my-3" style="width:27rem;">
+            <div class="card-header">Project Code: JS03 <span class="text-warning" style="float:right">Deadline: 2022-07-25</span></div>
+            <div class="card-body">
+                <h5 class="card-title">My Cart</h5>
+                <p class="card-text">An E-Commerce shopping application which runs under the Android platform.</p>
+                <div id="more2" style="display:none;">
+                    <p>To Do</p>
+                    <p>1. Clone this repo link: <a href="https://github.com/TeamBetaProjects/MyCart">my cart</a> </p>
+                    <p>2. Create a branch called ft-menu</p>
+                    <p>3. Create a new Class Called Menu.java, and work on the layout items.</p>
+                    <p>4. Keep pushing your work to your branch</p>
+                    <p></p>
+                </div>
+                <a href="#" class="btn btn-primary" onclick="more2()" id="mbtn">more</a>
+                <!--                <p class="pt-2"><div class="card-header bg-warning mt-2">Time remaining: <span id="demo"></span> </div>-->
+                <!--                </p>-->
+            </div>
+        </div>
+
+        <div class="card my-3" style="width:27rem;">
+            <div class="card-header">Project Code: JS04 <span class="text-warning" style="float:right">Deadline: 2022-07-25</span></div>
+            <div class="card-body">
+                <h5 class="card-title">Online bookstore</h5>
+                <p class="card-text">The Online Book Shopping Store to manage, buy, add, remove and sell books. <br>
+                    Book name and Quantity selection, auto receipt generated and payment options.<br>
+                    Login and logout security for both user and admin. Seperate Profile for all..</p>
+                <div id="more3" style="display:none;">
+                    <p>To Do</p>
+                    <p>1. Clone this repo link: <a href="https://github.com/shashirajraja/onlinebookstore">online book store</a> </p>
+                    <p>2. Create a branch called ft-login</p>
+                    <p>3. Create a new Class Called Login.java, and work on the front end UI.</p>
+                    <p>4. Keep pushing your work to your branch</p>
+                    <p></p>
+                </div>
+                <a href="#" class="btn btn-primary" onclick="more3()" id="mbtn">more</a>
+                <!--                <p class="pt-2"><div class="card-header bg-warning mt-2">Time remaining: <span id="demo"></span> </div>-->
+                <!--                </p>-->
+            </div>
+        </div>
+
+        <p class="pt-3 pb-5 boun" style="margin-left:130px;"><a href="https://github.com/topics/java-project" class="btn btn-primary"> <i class="fa-solid fa-square-arrow-right"></i>&nbsp;&nbsp;More projects </a>
+        </p>
+    </div>
+    <div class="java1 col-md-5">
+        <h4 class="text-center head pb-3" style="text-decoration:underline;">Android/Kotlin</h4>
+        <div class="card my-3"  style="width:27rem;">
+            <div class="card-header">Project Code: KN01 <span class="text-warning" style="float:right">Deadline: 2022-012-25</span></div>
+            <div class="card-body">
+                <h5 class="card-title">Movies App</h5>
+                <p class="card-text">This is a movies sample app in Kotlin, which is part of a serie of blog posts.</p>
+                <div id="more4" style="display:none;">
+                    <p>To Do</p>
+                    <p>1. Clone this repo link: <a href="https://github.com/android10/Android-CleanArchitecture-Kotlin">movie app</a> </p>
+                    <p>2. Create a branch called ft-details</p>
+                    <p>3. Create a new Class Called MovieDetails.java, and work on movie details section.</p>
+                    <p>4. Keep pushing your work to your branch</p>
+                    <p>Layout</p>
+                    <img src="https://user-images.githubusercontent.com/1360604/31345866-679a221a-ad17-11e7-8097-7800edb677fa.gif" height="100px" width="100px">
+                </div>
+                <a href="#" class="btn btn-primary" onclick="more4()">more</a>
+                <!--                <p class="pt-2"><div class="card-header bg-warning mt-2">Time remaining: <span id="demo"></span> </div>-->
+                </p>
+            </div>
+        </div>
+
+        <div class="card my-3"  style="width:27rem;">
+            <div class="card-header">Project Code: AN02 <span class="text-warning" style="float:right">Deadline: 2022-07-25</span></div>
+            <div class="card-body">
+                <h5 class="card-title">Android Camera</h5>
+                <p class="card-text">A grocery buying app allowing consumers to purchase and order groceries before you get to the store.</p>
+                <div id="more5" style="display:none;">
+                    <p>To Do</p>
+                    <p>1. Clone this repo link: <a href="https://github.com/ravi8x/AndroidCamera">android camera</a> </p>
+                    <p>2. Create a branch called ft-layout</p>
+                    <p>3. Create a new Class Called Layout.java, and work on the UI part.</p>
+                    <p>4. Keep pushing your work to your branch</p>
+                </div>
+                <a href="#" class="btn btn-primary" onclick="more5()">more</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="card my-3"  style="width:27rem;">
+            <div class="card-header">Project Code: AN03 <span class="text-warning" style="float:right">Deadline: 2022-07-25</span></div>
+            <div class="card-body">
+                <h5 class="card-title">Ambulance booking App</h5>
+                <p class="card-text">This a clone of Taxi Booking Apps like Ola/Uber but for Ambulances.</p>
+
+                <div id="more6" style="display:none;">
+                    <p>To Do</p>
+                    <p>1. Clone this repo link: <a href="https://github.com/dmast3r/Ambulance-Booking-Application-a-Taxi-Booking-App-or-an-Ola-Uber-Clone-for-Ambulances">ambulance booking app</a> </p>
+                    <p>2. Create a branch called ft-menu</p>
+                    <p>3. Create a new Class Called Menu.java, and work on the front end UI.</p>
+                    <p>4. Keep pushing your work to your branch</p>
+                    <img src="https://github.com/dmast3r/Ambulance-Booking-Application-a-Taxi-Booking-App-or-an-Ola-Uber-Clone-for-Ambulances/blob/master/screenshots/Both/IMG_20181225_190019.jpg?raw=true">
+                </div>
+                <a href="#" class="btn btn-primary" onclick="more6()">more</a>
+            </div>
+        </div>
+
+        <p class="pt-3 pb-5" style="margin-left:130px;"><a href="https://github.com/topics/kotlin-android" class="btn btn-primary"> <i class="fa-solid fa-square-arrow-right"></i>&nbsp;&nbsp;More projects </a>
+        </p>
+
+    </div>
+
+    <div class="quote col-md-2">
+        <h5>What is Collaboration Software? </h5>
+        <p>
+            Collaboration software enables <br>
+            the sharing of information by <br>
+            providing an online or intranet-
+            <br>based environment for virtual teamwork.
+        </p>
+    </div>
+
+</div>
+
+
+<script src="/js/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+</html>
+
