@@ -5,10 +5,22 @@ import model.fullstack;
 import java.util.List;
 
 public interface fullstackDao {
-        void create();
+        //CRUD
+
+        // list all contacts
         List<fullstack> getAllfullstack();
 
-        static void addFullstack(fullstack fullstack);
 
-        fullstack findSightingById(int id);
+        // create a new contacts
+        void addfullstack(fullstack fullstack);
+
+
+        // get a specific contact
+        fullstack findfullstackById(int id);
+
+        // delete by id
+        void deleteById(int id);
+
+        // delete all contacts.
+        void deleteAllfullstack();
 }

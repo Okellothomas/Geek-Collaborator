@@ -1,26 +1,27 @@
-<h1>$fullstack.getName() fullstack:</h1>
+{{#partial "content"}}
 
-<table class="thead-dark">
-    <table class="thread-dark">
-        <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Owner</th>
-            <th class="col">Owner Contact</th>
-        </tr>
-    </table>
+    <div class="container-fluid text-start mx-auto" id="client">
 
-    #foreach($fullstack in $fullstack.getFullstack())
-
-    <tbody>
-    <tr>
-        <td>$fullstack.getName()</td>
-        <td>$fullstack.getOwner()</td>
-        <td>$fullstack.getOwner_contact()</td>
-    </tr>
-    </tbody>
-    #end
-</table>
-<div class="space"></div>
-
-<a href="/fullstackCollaborators/$fullstack.getId()/projects/new"><button class="btn btn-cyan">Add a collaborator</button></a>
-<a href="/projects"><button class="btn btn-cyan">Back to Projects</button></a>
+        <div class="card mx-auto"  style="max-width: 660px;">
+            <div class="row">
+                <div class="col-md-8">
+                    {{#each fullstack}}
+                        <div class="card-body" id="details">
+                            <h5 class="card-title">{{name}}</h5>
+                            <hr>
+                            <p class="card-text">
+                            <p>Project Name: <span class="detail">{{name}}</span></p>
+                            <p>Project Owner: <span class="detail">{{owner}}</span></p>
+                            <p>Owner`s Contact: <span class="detail">{{owner_contact}}</span></p>
+                            <p class="card-footer">
+                            <p><a class="btn btn-outline-secondary justify-content-left" href="/fullstack/{{id}}/delete">delete {{name}}</a> </p>
+                            <hr>
+                        </div>
+                    {{/each}}
+                    <p><a class="btn btn-outline-danger justify-content-left" href="/fullstack">Sign in as Collaborator</a> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/partial}}
+{{> layout.hbs}}
