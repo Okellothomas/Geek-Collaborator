@@ -1,6 +1,6 @@
 package dao;
 
-import model.fullstack;
+import model.Fullstack;
 
 import java.util.List;
 
@@ -8,15 +8,15 @@ public interface fullstackDao {
         //CRUD
 
         // list all contacts
-        List<fullstack> getAllfullstack();
+        List<Fullstack> getAllfullstack();
 
 
         // create a new contacts
-        void addfullstack(fullstack fullstack);
+        void addfullstack(Fullstack fullstack);
 
 
         // get a specific contact
-        fullstack findfullstackById(int id);
+        Fullstack findfullstackById(int id);
 
         // delete by id
         void deleteById(int id);

@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class fullstack {
+public class Fullstack {
 
     private String name;
     private String owner;
@@ -10,7 +10,7 @@ public class fullstack {
     private int id;
 
 
-    public fullstack(String name, String owner, String owner_contact) {
+    public Fullstack(String name, String owner, String owner_contact) {
         this.name = name;
         this.owner = owner;
         this.owner_contact = owner_contact;
@@ -46,7 +46,7 @@ public class fullstack {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        fullstack fullstack = (fullstack) o;
+        Fullstack fullstack = (Fullstack) o;
         return id == fullstack.id &&
                 Objects.equals(name, fullstack.name) &&
                 Objects.equals(owner, fullstack.owner) &&

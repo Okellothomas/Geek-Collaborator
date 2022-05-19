@@ -16,7 +16,22 @@
                             <p class="card-footer">
                             <p><a class="btn btn-outline-secondary justify-content-left" href="/fullstack/{{id}}/delete">delete {{name}}</a> </p>
                             <hr>
-                            <p><a class="btn btn-outline-danger justify-content-left" href="/fullstack">Sign in as Collaborator</a> </p>
+                            <p><a class="btn btn-outline-danger justify-content-left" href="/fullstackCollaborator/new">Sign in as Collaborator</a> </p>
+                        </div>
+                    {{/each}}
+
+
+                    {{#each fullstackCollaborators}}
+                        <div class="card-body" id="details">
+                            <h5 class="card-title">{{name}}</h5>
+                            <hr>
+                            <p class="card-text">
+                            <p>Language: <span class="detail">{{language}}</span></p>
+                            <p>Contact: <span class="detail">{{contact}}</span></p>
+                            <p>Role: <span class="detail">{{role}}</span></p>
+                            <p class="card-footer">
+                            <p><a class="btn btn-outline-secondary justify-content-left" href="/fullstack/{{id}}/delete">delete {{name}}</a> </p>
+                            <hr>
                         </div>
                     {{/each}}
 
