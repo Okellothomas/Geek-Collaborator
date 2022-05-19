@@ -23,6 +23,9 @@ public class App {
 //        String connect =  "jdbc:postgresql://localhost/geek_collaborators";
 //        Sql2o sql2o = new Sql2o(connect,"postgres","kamotho");
 
+    public static void main(String[] args) {
+
+
 //        String connect =  "jdbc:postgresql://localhost/geek_collaborators";
 //        Sql2o sql2o = new Sql2o(connect,"postgres","kamotho");
 
