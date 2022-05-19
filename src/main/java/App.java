@@ -14,6 +14,7 @@ import org.sql2o.Sql2o;
 import dao.Sql2ofullstackDao;
 import model.Fullstack;
 import model.fullstack;
+import dao.fullstackDao;
 
 import dao.Sql2oCollaborationDao;
 import dao.Sql2oDevelopersDao;
@@ -45,7 +46,7 @@ import java.util.Map;
 import static spark.Spark.*;
 
 
-public class App {
+
 
     // String connection = "jdbc:postgresql://ec2-54-172-175-251.compute-1.amazonaws.com:5432/d19tsrp5ts9arv";
 //        Sql2o sql2o = new Sql2o(connection,"acutsmyrvfxroj","f6f2568b1bedb19e5723424cd139ea089f13b9effb3756dcc39ca0ba0196a631");
@@ -108,6 +109,11 @@ public class App {
 
 
         Sql2oContact contactDao = new Sql2oContact(sql2o);
+
+        get("/",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model,"index.hbs");
+        },new HandlebarsTemplateEngine());
 
 
             /*----------------------------Consume API--------------------------------*/
@@ -184,12 +190,6 @@ public class App {
 
 
 
-        get("/",(request, response) -> {
-            Map<String, Object> model = new HashMap<>();
-            return new ModelAndView(model,"index.hbs");
-        },new HandlebarsTemplateEngine());
-
-
         //display form receive clients data
         get("/Fullstack/new",(request,response)->{
             Map<String, Object>model = new HashMap<>();
@@ -224,12 +224,13 @@ public class App {
                     Map<String, Object> model = new HashMap<>();
                     JobsDao.deleteAll();
                     return null;
-
-            List<Fullstack> allContacts = fullstackDao.getAllfullstack();
-            model.put("Fullstack",allContacts);
-            return new ModelAndView(model,"projects.hbs");
-
         },new HandlebarsTemplateEngine());
+
+//            List<Fullstack> allContacts = fullstackDao.getAllfullstack();
+//            model.put("Fullstack",allContacts);
+//            return new ModelAndView(model,"projects.hbs");
+//
+//        },new HandlebarsTemplateEngine());
 
 
 
@@ -293,4 +294,6 @@ public class App {
                 return new ModelAndView(model, "projects.hbs");
             }, new HandlebarsTemplateEngine());
 
-}}
+
+    }
+}
