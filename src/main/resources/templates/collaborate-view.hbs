@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 pt-4">
+            <h4>Current Active Developers</h4>
+        </div>
+        <div class="col-md-4 pt-4">
+            <a style="font-size:20px; color:black" href="/android">Back</a>&nbsp;&nbsp;
+            <a style="font-size:20px; color:black" href="/">Home</a>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+    <div class="col-md-12 pt-3 viewcol">
+            {{#if collaboration}}
+                {{#each collaboration as |r|}}
+                    <div class="card m-3 px-3" style="width: 27rem; color:black; background-color:transparent;border:2px solid white;">
+<!--                        <img class="card-img-top" src="..." alt="Card image cap">-->
+                        <div class="card-body">
+                            <p class="card-text">Github Username: {{r.username}}</p>
+                            <hr style="color: white;">
+                            <p class="card-text">CV: {{r.resume}}</p>
+                            <p class="card-text">Project working on: {{r.project_code}}</p>
+                            <p class="card-text">Start Date:{{r.date}}</p>
+                        </div>
+                    </div>
+
+
+                {{/each}}
+            {{/if}}
+    </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
