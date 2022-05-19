@@ -15,7 +15,6 @@ repositories {
 mainClassName = 'App'
 
 dependencies {
-
 //    implementation 'org.testng:testng:7.5'
 //    implementation 'org.junit.jupiter:junit-jupiter:5.8.2'
 //    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
