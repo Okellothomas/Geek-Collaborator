@@ -64,6 +64,7 @@ public class App {
             return new ModelAndView(model, "index.hbs");
         },new HandlebarsTemplateEngine());
 
+
         get("/fullstack",(request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             return new ModelAndView(model, "fullstack-form.hbs");
@@ -88,16 +89,16 @@ public class App {
 //        });
 
         //process new contact form
-        post("/fullstack",(request,response)-> {
-            Map<String, Object> model = new HashMap<>();
-            String name = request.queryParams("name");
-            String owner = request.queryParams("owner");
-            String owner_contact = request.queryParams("owner_contact");
-            fullstack fullstack = new fullstack(name, owner, owner_contact);
-            fullstackDao.addFullstack(fullstack);
-            response.redirect("/");
-            return null;
-        },new HandlebarsTemplateEngine());
+//        post("/fullstack",(request,response)-> {
+//            Map<String, Object> model = new HashMap<>();
+//            String name = request.queryParams("name");
+//            String owner = request.queryParams("owner");
+//            String owner_contact = request.queryParams("owner_contact");
+//            fullstack fullstack = new fullstack(name, owner, owner_contact);
+//            fullstackDao.addFullstack(fullstack);
+//            response.redirect("/");
+//            return null;
+//        },new HandlebarsTemplateEngine());
 
 
 //        post("fullstackCollaborators/new",((request, response) -> {
@@ -130,8 +131,9 @@ public class App {
 
 //        String connect =  "jdbc:postgresql://localhost/geek_collaborators";
 //        Sql2o sql2o = new Sql2o(connect,"postgres","okello");
-//
-//        Sql2oContact contactDao = new Sql2oContact(sql2o);
+
+        Sql2oContact contactDao = new Sql2oContact(sql2o);
+//        fullstackDao fullstackDao = new fullstackDao();
 
 
 
