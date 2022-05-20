@@ -175,7 +175,14 @@ public class App {
             return new ModelAndView(model,"contact_details.hbs");
         },new HandlebarsTemplateEngine());
 
+//clear all contacts
+        get("/contact/delete",(request, response)->{
+            Map<String,Object>model = new HashMap<>();
+            contactDao.deleteAllContacts();
 
+            response.redirect("/");
+            return null;
+        },new HandlebarsTemplateEngine());
 
 //        get("/jobs", (request, response) -> {
 //            Map<String, Object> model = new HashMap<>();
@@ -218,14 +225,7 @@ public class App {
                     JobsDao.deleteAll();
                     return null;
         },new HandlebarsTemplateEngine());
-//clear all contacts
-        get("/contact/delete",(request, response)->{
-            Map<String,Object>model = new HashMap<>();
-            contactDao.deleteAllContacts();
 
-            response.redirect("/");
-            return null;
-        },new HandlebarsTemplateEngine());
 
 
 
