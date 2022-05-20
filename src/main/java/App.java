@@ -189,17 +189,16 @@ public class App {
 //        Sql2o sql2o = new Sql2o(connection,"acutsmyrvfxroj","f6f2568b1bedb19e5723424cd139ea089f13b9effb3756dcc39ca0ba0196a631");
 
 
-
         //display form receive clients data
-        get("/Fullstack/new",(request,response)->{
+        get("/fullstack/new",(request,response)->{
             Map<String, Object>model = new HashMap<>();
             List<Fullstack> contacts = fullstackDao.getAllfullstack();
             model.put("Fullstack",connect);
-            return new ModelAndView(model,"Fullstack-form.hbs");
+            return new ModelAndView(model,"fullstack-form.hbs");
         },new HandlebarsTemplateEngine());
 
 //process new contact form
-        post("/Fullstack",(request,response)->{
+        post("/fullstack",(request,response)->{
             Map<String, Object>model = new HashMap<>();
             String name = request.queryParams("name");
             String owner = request.queryParams("owner");
@@ -211,9 +210,8 @@ public class App {
         },new HandlebarsTemplateEngine());
 
 // display all contacts
-        get("/Fullstack",(request, response) -> {
+        get("/fullstack",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
-
             List<jobs> allJobs = JobsDao.getAll();
             model.put("jobs",allJobs);
             return new ModelAndView(model,"job-form.hbs");
@@ -280,6 +278,10 @@ public class App {
                 return null;
             }, new HandlebarsTemplateEngine());
 
+        get("/fullstack", (request, response) ->{
+            Map<String, Object> model = new HashMap<String, Object>();
+            return new ModelAndView(model, "fullstack-form.hbs");
+        }, new HandlebarsTemplateEngine());
 
             get("/fullstackCollaborators", (request, response) -> {
                 Map<String, Object> model = new HashMap<>();
